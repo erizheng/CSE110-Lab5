@@ -28,9 +28,9 @@ export function deleteExpense(req: Request, res: Response, expenses: Expense[]) 
         cost,
     };
 
-    const index = expenses.findIndex((expense) => expense.id == id);
+    const index = expenses.findIndex((expense) => expense.id == id)-1;
 
-    expenses.splice(index);
+    expenses.splice(index, 1);
     res.status(200).send(expenses);
 }
 
